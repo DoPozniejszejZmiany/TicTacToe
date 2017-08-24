@@ -70,8 +70,7 @@ public class Board {
                 if(brd[j][k]!=0) i++;
             }
         }
-        if(i==9) return true;
-        else return false;
+        return i == 9;
     }
     private void choosesq(){
         int maxpop = -1;
@@ -120,22 +119,17 @@ public class Board {
         for(j=0; j<3; j++){
             for(i=0; i<3; i++){
                 switch(brd[i][j]){
-                    case 0 :{
+                    case 0 :
                         fld='.';
-                        System.out.print(fld + " ");
                         break;
-                    }
-                    case 1 :{
+                    case 1 :
                         fld='O';
-                        System.out.print(fld + " ");
                         break;
-                    }
-                    case 2 :{
+                    case 2 :
                         fld='X';
-                        System.out.print(fld + " ");
                         break;
-                    }
                 }
+                System.out.print(fld + " ");
             }
             System.out.println();
         }
