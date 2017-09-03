@@ -16,7 +16,7 @@ public class Main {
             if(who) {
                 System.out.println("Player1's move!");
                 brd.printBrd();
-                if(brd.playerMove()) who=!who;;
+                if(brd.playerMove()) who=!who;
             } else{
                 System.out.println("CPU1's move!");
                 brd.aiMove();

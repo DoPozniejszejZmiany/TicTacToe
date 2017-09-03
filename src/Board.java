@@ -30,7 +30,7 @@ public class Board {
             if(brd[i][0]==brd[i][1]&&brd[i][2]==brd[i][1]&&brd[i][0]!=0) return brd[i][0];
         }
         if(brd[0][0]==brd[1][1]&&brd[2][2]==brd[1][1]&&brd[0][0]!=0) return brd[0][0];
-        if(brd[0][2]==brd[1][1]&&brd[2][0]==brd[1][1]&&brd[0][2]!=0) return brd[0][0];
+        if(brd[0][2]==brd[1][1]&&brd[2][0]==brd[1][1]&&brd[0][2]!=0) return brd[0][2];
         return 0;
     }
     private void scanpop(){
@@ -97,10 +97,19 @@ public class Board {
     }
     public boolean playerMove(){
         Scanner reader = new Scanner(System.in);
+        int x,y;
         System.out.print("Please choose X: ");
-        int x=reader.nextInt()-1;
+        try{
+            x=reader.nextInt()-1;
+        } catch(java.util.InputMismatchException e){
+            x=5;
+        }
         System.out.print("Please choose Y: ");
-        int y=reader.nextInt()-1;
+        try{
+            y=reader.nextInt()-1;
+        } catch(java.util.InputMismatchException e){
+            y=5;
+        }
         if(x>(-1) && x<3 && y>(-1) && y<3){
             if(set(2, x, y)) return true;
             else{
